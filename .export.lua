@@ -30,4 +30,6 @@ project "Preproc"
     zpm.export [[
         includedirs "preproc/include/"
         cppdialect "C++14"
+
+        zpm.uses "Zefiros-Software/Predef"
     ]]
