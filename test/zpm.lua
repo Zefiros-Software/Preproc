@@ -24,17 +24,10 @@
 -- @endcond
 -- ]]
 
-workspace "SerLib-ZPM"
+workspace "Preproc-ZPM"
 
-    zefiros.setTestZPMDefaults("serialisation")
+    zefiros.setTestZPMDefaults("preproc")
     
-    project "serialisation-zpm-test"
+    project "preproc-zpm-test"
 
-        zpm.uses {
-            "Zefiros-Software/SerLib2",
-            "Zefiros-Software/GoogleTest"
-        }
-
-        defines {
-            "TEST_FILES_DIR=\"../../test-files/\""
-        }
+        zpm.uses "Zefiros-Software/Preproc"

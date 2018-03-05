@@ -31,13 +31,33 @@
 
 // BOOST_FORCEINLINE ---------------------------------------------//
 // Macro to use in place of 'inline' to force a function to be inline
-#if !defined(BOOST_FORCEINLINE)
+#if !defined(FORCEINLINE)
 #  if defined(_MSC_VER)
-#    define BOOST_FORCEINLINE __forceinline
+#    define FORCEINLINE __forceinline
 #  elif defined(__GNUC__) && __GNUC__ > 3
-#    define BOOST_FORCEINLINE inline __attribute__ ((always_inline))
+#    define FORCEINLINE inline __attribute__ ((always_inline))
 #  else
-#    define BOOST_FORCEINLINE inline
+#    define FORCEINLINE inline
+#  endif
+#endif
+
+
+// BOOST_NOINLINE ---------------------------------------------//
+// Macro to use in place of 'inline' to prevent a function to be inlined
+#if !defined(NOINLINE)
+#  if defined(_MSC_VER)
+#    define NOINLINE __declspec(noinline)
+#  elif defined(__GNUC__) && __GNUC__ > 3
+// Clang also defines __GNUC__ (as 4)
+#    if defined(__CUDACC__)
+// nvcc doesn't always parse __noinline__, 
+// see: https://svn.boost.org/trac/boost/ticket/9392
+#      define NOINLINE __attribute__ ((noinline))
+#    else
+#      define NOINLINE __attribute__ ((__noinline__))
+#    endif
+#  else
+#    define NOINLINE
 #  endif
 #endif
 
