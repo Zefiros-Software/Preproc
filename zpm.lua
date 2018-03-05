@@ -25,6 +25,8 @@
 -- ]]
 
 workspace "Preproc"
+
+    cppdialect "C++14"
         
     zefiros.setDefaults("preproc", {
         mayLink = false

@@ -29,4 +29,5 @@ project "Preproc"
 
     zpm.export [[
         includedirs "preproc/include/"
+        cppdialect "C++14"
     ]]
