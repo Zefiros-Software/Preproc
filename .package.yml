@@ -1,0 +1,9 @@
+
+public: 
+  libraries:
+    - name: Zefiros-Software/Predef
+      version: '>1.65.0 || @head'
+development:
+  modules:
+    - name: Zefiros-Software/Defaults
+      version: '@head'
