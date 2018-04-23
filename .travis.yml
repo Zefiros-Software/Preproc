@@ -63,8 +63,8 @@ matrix:
     - GCC_VERSION=6
 global:
   env:
-  - PROJECT=SerLib
-  - PROJECT_DIRECTORY=serialisation
+  - PROJECT=Preproc
+  - PROJECT_DIRECTORY=preproc
 install:
 - source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:

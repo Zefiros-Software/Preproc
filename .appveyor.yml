@@ -3,8 +3,8 @@ platform:
 build: off
 environment:
   PYTHON: "C:\\Python35"
-  PROJECT: SerLib
-  PROJECT_DIRECTORY: serialisation
+  PROJECT: "Preproc"
+  PROJECT_DIRECTORY: "preproc"
   matrix:  
     - TYPE: zpm
     - BUILD_CONFIG: release
