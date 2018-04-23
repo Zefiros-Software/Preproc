@@ -27,6 +27,8 @@
 #ifndef __LIBRARY_H__
 #define __LIBRARY_H__
 
+#include "preproc/version.h"
+
 #include <boost/predef/library.h>
 
 #if defined(BOOST_LIB_C_GNU_AVAILABLE)

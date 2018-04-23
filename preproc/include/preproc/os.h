@@ -27,6 +27,8 @@
 #ifndef __OS_H__
 #define __OS_H__
 
+#include "preproc/version.h"
+
 #include <boost/predef/os.h>
 
 #if defined(BOOST_OS_WINDOWS)
