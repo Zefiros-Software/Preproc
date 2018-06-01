@@ -13,12 +13,12 @@ matrix:
     language: generic
 global:
   env:
-  - PROJECT=Preproc
+  - PROJECT=preproc
   - PROJECT_TEMPLATE=default
 install:
 - source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
-- cd test && zpm run test-definition Preproc
+- cd test && zpm run test-definition preproc
 notifications:
   slack:
     secure: N3KvgWGBGf7VIUbYUZUP6AbJV4ODcLeKh46fBe0UO5E2KQBHJ2gvaHnjxmj+GFmdKd/0e11Ty+E9SZ6tSDiyL9mQwsZUXcfjVedMM+uKiM10R0fxakCZD0qHg8eDa0t66DR+5LCkEXlmcnElLeln1tL7ZmekOGg9dj22USZQHr7i554OrZk3T7POO6KQRT8TW9pV5oWY57oGmU+ZtnFTquL6L9yf2nPyX8cLskH3RIoj9uReuZch6VeMO4WOAc14+mGFXT8NBWniJEcWWvPJkGr7ihAXQdF/uGK+6yCF+Z8zlLUwowUfVhRy7azMp68WDuyrGy/zRR1lh9xSB3ZH1c7QdEOHAbikdrz9EpR1WGg0ghFcBnQqDs/kK/wVDAjyuk+q6w+TUPsl1c8uu6w0xxt/pbJhQ4Q9GCyl7DbVBxUjD/hnKq7euiXTZKWlUtha5R/UmndVSaUS4xEt0jwEgVvLNRrGh1XyfdPU5g2jrBvlg+eR82CCJt5JqjmBJs4TSlxiS8IL7wX+YouxmoLBC2DeiecOSlYEulQ7B9LvA3GFHEqgHpIBPrL3oYHEDVGhvu23De+gZXODKwcEe72oEaI8G/Pbhs8gULg45Dak8SgMAld0NAq27J73wpgOPy9fKciWs2ZNAYNMxvQabHc3kqWTSrgq3ZQI1CBbOr5eI9M=
