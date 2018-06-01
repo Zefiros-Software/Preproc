@@ -2,75 +2,23 @@ sudo: required
 language: generic
 matrix:
   include:
+  - os: linux
+    dist: trusty
+    env: VERSION=6
+  - os: linux
+    dist: trusty
+    env: VERSION=7
   - os: osx
     osx_image: xcode9.2
     language: generic
-    env:
-    - BUILD_CONFIG=release
-    - BUILD_ARCHITECTURE=x86_64
-  - os: osx
-    osx_image: xcode9.2
-    language: generic
-    env:
-    - BUILD_CONFIG=debug
-    - BUILD_ARCHITECTURE=x86_64
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=coverage
-    - BUILD_ARCHITECTURE=x86_64
-    - GCC_VERSION=7
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=release
-    - BUILD_ARCHITECTURE=x86_64
-    - GCC_VERSION=7
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=debug
-    - BUILD_ARCHITECTURE=x86_64
-    - GCC_VERSION=7
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=release
-    - BUILD_ARCHITECTURE=x86
-    - GCC_VERSION=7
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=release
-    - BUILD_ARCHITECTURE=x86_64
-    - GCC_VERSION=6
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=debug
-    - BUILD_ARCHITECTURE=x86_64
-    - GCC_VERSION=6
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=release
-    - BUILD_ARCHITECTURE=x86
-    - GCC_VERSION=6
-  - os: linux
-    dist: trusty
-    env:
-    - BUILD_CONFIG=zpm
-    - GCC_VERSION=6
 global:
   env:
   - PROJECT=Preproc
-  - PROJECT_DIRECTORY=preproc
+  - PROJECT_TEMPLATE=default
 install:
 - source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
-- zpm run build-ci-library
-after_success:
-- zpm run deploy-ci-library
+- cd test && zpm run test-definition Preproc
 notifications:
   slack:
-    secure: kATDWFfsFloS84hxtY5/rKOH67ZlUAjpX+xuYP5rrJfxRvFr8ALGmmB9C4B/5+QqZnbSgmV5F6TWW1IZZ7L8EfkfxVWjAX5hc2dt7X77IpEgU6Cpg9hFsXUJvyLyfpX8eQNtz8Mv8CrJ/sHWi1588EDKBKWcI0OIUAsrdBPw9MD2hggOkScjOCpOI0Ztz2JMibnSwkwBJcxDAUmROWwOqTMWeN1TWJ41n4J6v8DpqrXV5prz89a2mw4+SpYLbzyH82yTZuKovd2tqMP/Oe8qK7OU6+h0by0cI52Wtgvi3kpbClhnxidxGFnEdXAAe1m4YT9GZMDNJlgEXvuvX0MLOUxjZPnal5BoqAnfXbb46Fwu7g2mmIKXuP9yq/nulm+B41ONDemgowi9k0v1lNq2HbcImqZ6P30hF1FtZjMCygXhLqsjnjtjHrZGAlWsRXT6hXdxxkCLT9S2y3irzTSe+7xOoIeML0iuQM/hgldvztgVj7wmDrw15hWE/hUjRSSKxIGTdQU6frGkLHtaYlX96QbLHn9aoUeF9xKnWQlSrrF0a4Jv19fSLZrP/UEanK304lcq49jUuiOhR4QohTWTCDM24pHqIb1l0+PrFwGGCpQbJf345duL+tbSMRfoqMDgjpm3cQ5UfSMiy8ek9r8RNIMFdoi5o84HoJF1wV+F0eY=
+    secure: N3KvgWGBGf7VIUbYUZUP6AbJV4ODcLeKh46fBe0UO5E2KQBHJ2gvaHnjxmj+GFmdKd/0e11Ty+E9SZ6tSDiyL9mQwsZUXcfjVedMM+uKiM10R0fxakCZD0qHg8eDa0t66DR+5LCkEXlmcnElLeln1tL7ZmekOGg9dj22USZQHr7i554OrZk3T7POO6KQRT8TW9pV5oWY57oGmU+ZtnFTquL6L9yf2nPyX8cLskH3RIoj9uReuZch6VeMO4WOAc14+mGFXT8NBWniJEcWWvPJkGr7ihAXQdF/uGK+6yCF+Z8zlLUwowUfVhRy7azMp68WDuyrGy/zRR1lh9xSB3ZH1c7QdEOHAbikdrz9EpR1WGg0ghFcBnQqDs/kK/wVDAjyuk+q6w+TUPsl1c8uu6w0xxt/pbJhQ4Q9GCyl7DbVBxUjD/hnKq7euiXTZKWlUtha5R/UmndVSaUS4xEt0jwEgVvLNRrGh1XyfdPU5g2jrBvlg+eR82CCJt5JqjmBJs4TSlxiS8IL7wX+YouxmoLBC2DeiecOSlYEulQ7B9LvA3GFHEqgHpIBPrL3oYHEDVGhvu23De+gZXODKwcEe72oEaI8G/Pbhs8gULg45Dak8SgMAld0NAq27J73wpgOPy9fKciWs2ZNAYNMxvQabHc3kqWTSrgq3ZQI1CBbOr5eI9M=

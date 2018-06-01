@@ -1,0 +1,50 @@
+{
+  "definition": "./",
+  "optionals": [],
+  "private": {
+    "libraries": [ {
+      "definition": "../",
+      "hash": "LOCAL",
+      "name": "Zefiros-Software/Preproc",
+      "public": {
+        "libraries": [ {
+          "definition": "https://github.com/Zefiros-Software/Predef.git",
+          "hash": "c8c26821b9ab850ace7bbaf0d22f347a1486ff6d",
+          "name": "Zefiros-Software/Predef",
+          "repository": "https://github.com/boostorg/predef.git",
+          "tag": "boost-1.67.0",
+          "version": "1.67.0",
+          "versionRequirement": ">1.65.0 || @head"
+        } ]
+      },
+      "repository": "../",
+      "tag": "DIR"
+    } ],
+    "modules": [ {
+      "definition": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
+      "hash": "66cac4a6aa7f109e0fb8ce9daaac9f4330307b46",
+      "name": "Zefiros-Software/Defaults",
+      "public": {
+        "libraries": [ {
+          "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
+          "hash": "db5f9ec567daff3beba53fd0bcd98e3f3562404c",
+          "name": "Zefiros-Software/GoogleTest",
+          "repository": "https://github.com/google/googletest.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head || ^1.0.0"
+        }, {
+          "definition": "https://github.com/Zefiros-Software/GoogleBenchmark.git",
+          "hash": "4c2af0788977d3bd900585528c2d08b875b2cd39",
+          "name": "Zefiros-Software/GoogleBenchmark",
+          "repository": "https://github.com/google/benchmark.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head"
+        } ]
+      },
+      "repository": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ]
+  },
+  "repository": "./"
+}
